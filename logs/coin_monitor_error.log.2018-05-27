@@ -1,0 +1,110 @@
+2018-05-27 22:04:10 [ schedulerFactoryBean_Worker-1:68286 ] - [ ERROR ] Data conversion error converting "'12,260,400,000' (TB_MARKETLIST: MARKETCAP DECIMAL(31, 5))"; SQL statement:
+insert into tb_marketlist (id, history_rank, is_remind, marketcap, name, noid, rank, rate, rate_percent, symbol) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?) -- (NULL, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9) [22018-196]
+2018-05-27 22:04:10 [ schedulerFactoryBean_Worker-1:68301 ] - [ ERROR ] Job group1.job1 threw an unhandled Exception: 
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.coin.monitor.service.impl.MarketListServiceImpl$$EnhancerBySpringCGLIB$$6d67c93.storeMarketList(<generated>)
+	at com.coin.monitor.quartz.ScanMarketListQuartz.execute(ScanMarketListQuartz.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:58)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 11 more
+2018-05-27 22:04:10 [ schedulerFactoryBean_Worker-1:68304 ] - [ ERROR ] Job (group1.job1 threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.coin.monitor.service.impl.MarketListServiceImpl$$EnhancerBySpringCGLIB$$6d67c93.storeMarketList(<generated>)
+	at com.coin.monitor.quartz.ScanMarketListQuartz.execute(ScanMarketListQuartz.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 more
+Caused by: javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:58)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 11 more
+2018-05-27 22:59:55 [ restartedMain:463392 ] - [ ERROR ] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field marketListService in com.coin.monitor.controller.MarketListController required a bean of type 'com.coin.monitor.service.MarketListService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.coin.monitor.service.MarketListService' in your configuration.
+
+2018-05-27 23:00:04 [ restartedMain:472585 ] - [ ERROR ] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field marketListService in com.coin.monitor.controller.MarketListController required a bean of type 'com.coin.monitor.service.MarketListService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.coin.monitor.service.MarketListService' in your configuration.
+
+2018-05-27 23:05:05 [ schedulerFactoryBean_Worker-5:772793 ] - [ ERROR ] Job group1.job1 threw an unhandled Exception: 
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.coin.monitor.service.impl.MarketListServiceImpl$$EnhancerBySpringCGLIB$$65db7731.storeMarketList(<generated>)
+	at com.coin.monitor.quartz.ScanMarketListQuartz.execute(ScanMarketListQuartz.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:58)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 11 more
+2018-05-27 23:05:05 [ schedulerFactoryBean_Worker-5:772796 ] - [ ERROR ] Job (group1.job1 threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.coin.monitor.service.impl.MarketListServiceImpl$$EnhancerBySpringCGLIB$$65db7731.storeMarketList(<generated>)
+	at com.coin.monitor.quartz.ScanMarketListQuartz.execute(ScanMarketListQuartz.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 more
+Caused by: javax.persistence.RollbackException: Transaction marked as rollbackOnly
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:58)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 11 more
