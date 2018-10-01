@@ -87,11 +87,11 @@ public class MarketListServiceImpl implements MarketListService {
                     } else {
                         if (marketList.getRank() != i + 1) {
                             logger.info("币种：" + dataBean.getSymbol() + " 上次排名：" + marketList.getRank() + " 本次排名：" + (i + 1));
-                            CoinMarketConfig coinMarketConfig = marketListConfigRepository.findSymbol(dataBean.getSymbol());
+//                            CoinMarketConfig coinMarketConfig = marketListConfigRepository.findSymbol(dataBean.getSymbol());
                             //只要排名上下浮动达到预设的就要提醒
-                            if (coinMarketConfig != null && coinMarketConfig.getUpgrade_rank_value() < Math.abs(marketList.getRank() - (i + 1))) {
+//                            if (coinMarketConfig != null && coinMarketConfig.getUpgrade_rank_value() < Math.abs(marketList.getRank() - (i + 1))) {
                                 marketList.setIs_remind(1);
-                            }
+//                            }
                             marketList.setHistory_rank(marketList.getRank());
                             marketList.setRank(i + 1);
                         }
